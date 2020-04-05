@@ -1,5 +1,5 @@
-# ADB-Wifi
-[![PyPI version](https://badge.fury.io/py/ADB-Wifi.svg)](https://badge.fury.io/py/ADB-Wifi)  
+# Auto-ADB-Wifi
+[![PyPI version](https://badge.fury.io/py/Auto-ADB-Wifi.svg)](https://badge.fury.io/py/Auto-ADB-Wifi)  
 
 A script to automatically connect android devices in debug mode using WIFI 
  
@@ -20,10 +20,10 @@ So, I have created this script to auto connect a device using WIFI.
 
 ## Installation
 
-Using pip you can install ```adb-wifi```
+Using pip you can install ```auto-adb-wifi```
 
 ### Linux and macOS:
-```$ sudo pip install adb-wifi```
+```$ sudo pip install auto-adb-wifi```
 
 ## Usage
 
@@ -35,6 +35,3 @@ You can add the ```adb-wifi``` to your startup applications.
 **Attention:** If your device turns off(battery, etc), you need to plug again the device to the computer because the adb need to open the ```tcpip port```!  
 If your device has rooted you can use this [application](https://play.google.com/store/apps/details?id=com.ttxapps.wifiadb)
  to turn on the ```tcpip port```and ignore this step.
-
-## Created & Maintained By
-[Jorge Costa](https://github.com/extmkv)
