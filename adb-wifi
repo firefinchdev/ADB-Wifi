@@ -46,6 +46,12 @@ def saveIPConnections(oldIps):
         f.write(','.join(oldIps))
         f.close()
 
+def getIpFromIpWithPort(ip):
+    result = re.findall("(.*?):{PORT}".format(PORT=PORT), ip)
+    if len(result) > 0:
+        return result[0]
+    return None
+
 
 oldIps = readIPConnections()
 
@@ -56,7 +62,8 @@ while True:
     adbDevices = os.popen("adb devices").read()
     for deviceID in getDecidesIDs(adbDevices):
         ip = getIPfromDeviceID(deviceID)
-        if(ip != "" and verifyIfNotConnected(adbDevices, ip)):
+        if(ip != "" and verifyIfNotConnected(adbDevices, ip) 
+                and (getIpFromIpWithPort(deviceID) not in ipsToConnect)):
             os.popen("adb -s " + deviceID + " tcpip " + str(PORT))
             print("Added new ip to connect " + ip)
             ipsToConnect.append(ip)
